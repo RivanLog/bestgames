@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BestGames — Маркетплейс компьютерных игр</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container header__container">
+      <!-- Векторный логотип в фирменных цветах -->
+      <a href="index.html" class="logo" aria-label="На главную BestGames">
+        <svg class="logo__icon" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://w3.org">
+          <rect width="36" height="36" rx="8" fill="url(#logo_grad)"/>
+          <path d="M10 21L12.5 14.5C13.1 13 14.5 12 16.1 12H19.9C21.5 12 22.9 13 23.5 14.5L26 21C26.5 22.4 25.5 24 24 24C23.1 24 22.3 23.5 21.9 22.7L20.8 20.5H15.2L14.1 22.7C13.7 23.5 12.9 24 12 24C10.5 24 9.5 22.4 10 21Z" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="21.5" cy="16.5" r="1.2" fill="#06B6D4"/>
+          <path d="M14.5 15.5V17.5M13.5 16.5H15.5" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="logo_grad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7C3AED"/>
+              <stop offset="1" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo__text">Best<span class="logo__accent">Games</span></span>
+      </a>
+
+      <!-- Десктопное меню навигации (1024px - 1920px) -->
+      <nav class="nav-desktop" aria-label="Основная навигация">
+        <ul class="nav-desktop__list">
+          <li><a href="#genre-search" class="nav-desktop__link">Поиск</a></li>
+          <li><a href="catalog.html" class="nav-desktop__link">Каталог игр</a></li>
+          <li><a href="profile.html" class="nav-desktop__link">Личный кабинет</a></li>
+          <li><a href="login.html" class="btn btn--primary">Войти</a></li>
+        </ul>
+      </nav>
+
+      <!-- Правый блок: Переключение темы на index_white.html и CSS-бургер -->
+      <div class="header__controls">
+        <a href="index_white.html" class="theme-link" title="Переключить на светлую тему" aria-label="Переключить на светлую тему">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+        </a>
+
+        <!-- Бургер через картинку на чистом CSS (для 360px и 768px) -->
+        <div class="burger-menu">
+          <input type="checkbox" id="burger-toggle" class="burger-menu__checkbox">
+          <label for="burger-toggle" class="burger-menu__btn" aria-label="Открыть меню">
+            <img 
+              src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23F8FAFC' stroke-width='2.2' stroke-linecap='round'%3E%3Cline x1='3' y1='6' x2='21' y2='6'/%3E%3Cline x1='3' y1='12' x2='21' y2='12'/%3E%3Cline x1='3' y1='18' x2='21' y2='18'/%3E%3C/svg%3E" 
+              alt="Меню" 
+              width="24" 
+              height="24" 
+              class="burger-menu__img"
+            >
+          </label>
+
+          <ul class="burger-menu__dropdown">
+            <li class="burger-menu__item"><a href="#genre-search" class="burger-menu__link">Поиск</a></li>
+            <li class="burger-menu__item"><a href="catalog.html" class="burger-menu__link">Каталог игр</a></li>
+            <li class="burger-menu__item"><a href="profile.html" class="burger-menu__link">Личный кабинет</a></li>
+            <li class="burger-menu__item"><a href="login.html" class="burger-menu__link burger-menu__link--accent">Войти</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- 1.1.4 Слайдер с новинками игр на чистом CSS -->
+    <section class="hero-slider" aria-label="Новинки игр">
+      <div class="container">
+        <div class="slider">
+          <!-- Радиокнопки управления слайдами -->
+          <input type="radio" name="hero-slider" id="slide-1" class="slider__radio" checked>
+          <input type="radio" name="hero-slider" id="slide-2" class="slider__radio">
+          <input type="radio" name="hero-slider" id="slide-3" class="slider__radio">
+
+          <div class="slider__track">
+            <article class="slider__slide">
+              <img src="https://placehold.co" alt="Cyber Odyssey 2088" class="slider__img">
+              <div class="slider__overlay">
+                <span class="slider__badge">Новинка недели</span>
+                <h1 class="slider__title">Cyber Odyssey 2088</h1>
+                <p class="slider__price">2 490 ₽</p>
+                <a href="catalog.html" class="btn btn--primary">Подробнее</a>
+              </div>
+            </article>
+
+            <article class="slider__slide">
+              <img src="https://placehold.co" alt="Shadow of Valhalla" class="slider__img" loading="lazy">
+              <div class="slider__overlay">
+                <span class="slider__badge">Эксклюзив</span>
+                <h2 class="slider__title">Shadow of Valhalla</h2>
+                <p class="slider__price">1 890 ₽</p>
+                <a href="catalog.html" class="btn btn--primary">Подробнее</a>
+              </div>
+            </article>
+
+            <article class="slider__slide">
+              <img src="https://placehold.co" alt="Starfield Horizon" class="slider__img" loading="lazy">
+              <div class="slider__overlay">
+                <span class="slider__badge">Предзаказ открыт</span>
+                <h2 class="slider__title">Starfield Horizon</h2>
+                <p class="slider__price">2 990 ₽</p>
+                <a href="catalog.html" class="btn btn--primary">Подробнее</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Индикаторы активного слайда -->
+          <div class="slider__dots">
+            <label for="slide-1" class="slider__dot" aria-label="Слайд 1"></label>
+            <label for="slide-2" class="slider__dot" aria-label="Слайд 2"></label>
+            <label for="slide-3" class="slider__dot" aria-label="Слайд 3"></label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1.1.5 Быстрый поиск по жанрам -->
+    <section class="search-section" id="genre-search">
+      <div class="container">
+        <div class="search-box">
+          <h2 class="search-box__title">Быстрый поиск по жанрам</h2>
+          <form class="search-form" action="catalog.html" method="get">
+            <label for="genreInput" class="visually-hidden">Введите жанр игры</label>
+            <input 
+              type="text" 
+              id="genreInput" 
+              name="genre" 
+              class="search-form__input" 
+              list="genresList" 
+              placeholder="Например: RPG, Шутер, Стратегия, Гонки..." 
+              autocomplete="off"
+              required
+            >
+            <datalist id="genresList">
+              <option value="Экшен (Action)">
+              <option value="Ролевые игры (RPG)">
+              <option value="Шутеры (FPS / TPS)">
+              <option value="Стратегии (RTS / TBS)">
+              <option value="Приключения (Adventure)">
+              <option value="Симуляторы и Гонки">
+              <option value="Инди-игры">
+            </datalist>
+            <button type="submit" class="btn btn--primary search-form__btn">Найти</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1.1.6 Инфографика о преимуществах маркетплейса -->
+    <section class="features section">
+      <div class="container">
+        <h2 class="section__title">Почему выбирают BestGames</h2>
+        <div class="features__grid">
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Привлекательные цены</h3>
+            <p class="feature-card__desc">Прямые поставки ключей от издателей без лишних наценок.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Ежемесячные акции</h3>
+            <p class="feature-card__desc">Регулярные распродажи хитов со скидками до 80% каждый месяц.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Круглосуточная поддержка</h3>
+                        <p class="feature-card__desc">Оперативная помощь с активацией ключей 24/7 без выходных.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Быстрая покупка</h3>
+            <p class="feature-card__desc">Моментальная отправка цифрового ключа сразу после оплаты.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Популярные игры</h2>
+          <a href="catalog.html" class="btn btn--outline">Весь каталог</a>
+        </div>
+
+        <div class="games-grid">
+          <article class="game-card">
+            <a href="catalog.html" class="game-card__link-overlay" aria-label="Перейти в каталог к игре Ведьмак: Дикая Охота"></a>
+            <div class="game-card__media">
+              <img src="https://placehold.co" alt="Ведьмак: Дикая Охота" class="game-card__img" loading="lazy">
+            </div>
+            <div class="game-card__body">
+              <span class="game-card__genre">RPG / Открытый мир</span>
+              <h3 class="game-card__title">Ведьмак: Дикая Охота</h3>
+              <p class="game-card__dev">Разработчик: CD Projekt RED</p>
+              <div class="game-card__rating" aria-label="Рейтинг 5 из 5">
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+              </div>
+              <div class="game-card__footer">
+                <span class="game-card__price">1 199 ₽</span>
+                <a href="catalog.html" class="btn btn--primary btn--sm game-card__btn">В каталог</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <a href="catalog.html" class="game-card__link-overlay" aria-label="Перейти в каталог к игре Metro Exodus"></a>
+            <div class="game-card__media">
+              <img src="https://placehold.co" alt="Metro Exodus" class="game-card__img" loading="lazy">
+            </div>
+            <div class="game-card__body">
+              <span class="game-card__genre">Шутер / Постапокалипсис</span>
+              <h3 class="game-card__title">Metro Exodus</h3>
+              <p class="game-card__dev">Разработчик: 4A Games</p>
+              <div class="game-card__rating" aria-label="Рейтинг 5 из 5">
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+              </div>
+              <div class="game-card__footer">
+                <span class="game-card__price">950 ₽</span>
+                <a href="catalog.html" class="btn btn--primary btn--sm game-card__btn">В каталог</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <a href="catalog.html" class="game-card__link-overlay" aria-label="Перейти в каталог к игре Atomic Heart"></a>
+            <div class="game-card__media">
+              <img src="https://placehold.co" alt="Atomic Heart" class="game-card__img" loading="lazy">
+            </div>
+            <div class="game-card__body">
+              <span class="game-card__genre">Экшен / Шутер</span>
+              <h3 class="game-card__title">Atomic Heart</h3>
+              <p class="game-card__dev">Разработчик: Mundfish</p>
+              <div class="game-card__rating" aria-label="Рейтинг 4 из 5">
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="game-card__footer">
+                <span class="game-card__price">1 790 ₽</span>
+                <a href="catalog.html" class="btn btn--primary btn--sm game-card__btn">В каталог</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <a href="catalog.html" class="game-card__link-overlay" aria-label="Перейти в каталог к игре Frostpunk 2"></a>
+            <div class="game-card__media">
+              <img src="https://placehold.co" alt="Frostpunk 2" class="game-card__img" loading="lazy">
+            </div>
+            <div class="game-card__body">
+              <span class="game-card__genre">Стратегия / Выживание</span>
+              <h3 class="game-card__title">Frostpunk 2</h3>
+              <p class="game-card__dev">Разработчик: 11 bit studios</p>
+              <div class="game-card__rating" aria-label="Рейтинг 4 из 5">
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="game-card__footer">
+                <span class="game-card__price">1 550 ₽</span>
+                <a href="catalog.html" class="btn btn--primary btn--sm game-card__btn">В каталог</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <a href="catalog.html" class="game-card__link-overlay" aria-label="Перейти в каталог к игре Forza Horizon 5"></a>
+            <div class="game-card__media">
+              <img src="https://placehold.co" alt="Forza Horizon 5" class="game-card__img" loading="lazy">
+            </div>
+            <div class="game-card__body">
+              <span class="game-card__genre">Гонки / Аркада</span>
+              <h3 class="game-card__title">Forza Horizon 5</h3>
+              <p class="game-card__dev">Разработчик: Playground Games</p>
+              <div class="game-card__rating" aria-label="Рейтинг 5 из 5">
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+              </div>
+              <div class="game-card__footer">
+                <span class="game-card__price">2 100 ₽</span>
+                <a href="catalog.html" class="btn btn--primary btn--sm game-card__btn">В каталог</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <a href="catalog.html" class="game-card__link-overlay" aria-label="Перейти в каталог к игре Baldur's Gate 3"></a>
+            <div class="game-card__media">
+              <img src="https://placehold.co" alt="Baldur's Gate 3" class="game-card__img" loading="lazy">
+            </div>
+            <div class="game-card__body">
+              <span class="game-card__genre">RPG / Фэнтези</span>
+              <h3 class="game-card__title">Baldur's Gate 3</h3>
+              <p class="game-card__dev">Разработчик: Larian Studios</p>
+              <div class="game-card__rating" aria-label="Рейтинг 5 из 5">
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+                <span class="star star--filled">★</span>
+              </div>
+              <div class="game-card__footer">
+                <span class="game-card__price">1 999 ₽</span>
+                <a href="catalog.html" class="btn btn--primary btn--sm game-card__btn">В каталог</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners section">
+      <div class="container">
+        <h2 class="section__title">Наши партнеры</h2>
+        <div class="partners__grid">
+          <div class="partner-placeholder" aria-label="Логотип партнера 1">
+            <svg width="160" height="60" viewBox="0 0 160 60" fill="none" xmlns="http://w3.org">
+              <rect x="1" y="1" width="158" height="58" rx="8" stroke="currentColor" stroke-width="2" stroke-dasharray="6 6"/>
+            </svg>
+          </div>
+          <div class="partner-placeholder" aria-label="Логотип партнера 2">
+            <svg width="160" height="60" viewBox="0 0 160 60" fill="none" xmlns="http://w3.org">
+              <rect x="1" y="1" width="158" height="58" rx="8" stroke="currentColor" stroke-width="2" stroke-dasharray="6 6"/>
+            </svg>
+          </div>
+          <div class="partner-placeholder" aria-label="Логотип партнера 3">
+            <svg width="160" height="60" viewBox="0 0 160 60" fill="none" xmlns="http://w3.org">
+              <rect x="1" y="1" width="158" height="58" rx="8" stroke="currentColor" stroke-width="2" stroke-dasharray="6 6"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+              <div class="footer__col">
+        <a href="index.html" class="logo footer__logo">
+          <span class="logo__text">Best<span class="logo__accent">Games</span></span>
+        </a>
+        <p class="footer__contact">
+          Телефон: <a href="tel:88009995599" class="footer__link">8-800-999-55-99</a>
+        </p>
+        <p class="footer__contact">
+          E-mail: <a href="mailto:best@games.ru" class="footer__link">best@games.ru</a>
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__title">Информация</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">Клиентам</a></li>
+          <li><a href="#" class="footer__link">Партнерам</a></li>
+          <li><a href="#" class="footer__link">О нас</a></li>
+          <li><a href="#" class="footer__link">Контакты</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__title">Навигация по сайту</h3>
+        <ul class="footer__list">
+          <li><a href="index.html" class="footer__link">Главная</a></li>
+          <li><a href="register.html" class="footer__link">Регистрация</a></li>
+          <li><a href="login.html" class="footer__link">Авторизация</a></li>
+          <li><a href="profile.html" class="footer__link">Личный кабинет</a></li>
+          <li><a href="#genre-search" class="footer__link">Поиск</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+

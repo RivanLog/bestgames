@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Административная панель — BestGames</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 1. Шапка сайта -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="logo" aria-label="На главную BestGames">
+        <svg class="logo__icon" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://w3.org">
+          <rect width="36" height="36" rx="8" fill="url(#logo_grad)"/>
+          <path d="M10 21L12.5 14.5C13.1 13 14.5 12 16.1 12H19.9C21.5 12 22.9 13 23.5 14.5L26 21C26.5 22.4 25.5 24 24 24C23.1 24 22.3 23.5 21.9 22.7L20.8 20.5H15.2L14.1 22.7C13.7 23.5 12.9 24 12 24C10.5 24 9.5 22.4 10 21Z" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="21.5" cy="16.5" r="1.2" fill="#06B6D4"/>
+          <path d="M14.5 15.5V17.5M13.5 16.5H15.5" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="logo_grad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7C3AED"/>
+              <stop offset="1" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo__text">Best<span class="logo__accent">Games</span></span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Основная навигация">
+        <ul class="nav-desktop__list">
+          <li><a href="index.html#genre-search" class="nav-desktop__link">Поиск</a></li>
+          <li><a href="catalog.html" class="nav-desktop__link">Каталог игр</a></li>
+          <li><a href="profile.html" class="nav-desktop__link">Личный кабинет</a></li>
+          <li><a href="login.html" class="btn btn--outline btn--sm">Выйти</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__controls">
+        <a href="index_white.html" class="theme-link" title="Переключить на светлую тему" aria-label="Переключить на светлую тему">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+        </a>
+
+        <div class="burger-menu">
+          <input type="checkbox" id="burger-toggle-admin" class="burger-menu__checkbox">
+          <label for="burger-toggle-admin" class="burger-menu__btn" aria-label="Открыть меню">
+            <img 
+              src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23F8FAFC' stroke-width='2.2' stroke-linecap='round'%3E%3Cline x1='3' y1='6' x2='21' y2='6'/%3E%3Cline x1='3' y1='12' x2='21' y2='12'/%3E%3Cline x1='3' y1='18' x2='21' y2='18'/%3E%3C/svg%3E" 
+              alt="Меню" 
+              width="24" 
+              height="24" 
+              class="burger-menu__img"
+            >
+          </label>
+
+          <ul class="burger-menu__dropdown">
+            <li class="burger-menu__item"><a href="index.html#genre-search" class="burger-menu__link">Поиск</a></li>
+            <li class="burger-menu__item"><a href="catalog.html" class="burger-menu__link">Каталог игр</a></li>
+            <li class="burger-menu__item"><a href="profile.html" class="burger-menu__link">Личный кабинет</a></li>
+            <li class="burger-menu__item"><a href="login.html" class="burger-menu__link">Выйти</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Основной контент: Административная панель -->
+  <main class="main admin-page">
+    <div class="container">
+      <div class="section__header">
+        <div>
+          <h1 class="section__title">Административная панель</h1>
+          <p class="admin-page__subtitle">Добавление новой игры в каталог маркетплейса</p>
+        </div>
+        <a href="catalog.html" class="btn btn--outline btn--sm">Перейти в каталог</a>
+      </div>
+
+      <section class="admin-card" aria-labelledby="addGameTitle">
+        <h2 class="admin-card__title" id="addGameTitle">Добавить информацию о новой игре</h2>
+
+        <form class="admin-form" action="catalog.html" method="post" enctype="multipart/form-data">
+          <!-- 6.1 Название игры и 6.2 Жанр -->
+          <div class="admin-form__row">
+            <div class="form-group">
+              <label for="gameTitle" class="form-group__label">Название игры</label>
+              <input 
+                type="text" 
+                id="gameTitle" 
+                name="game_title" 
+                class="form-group__input" 
+                placeholder="Например: Cyber Odyssey 2088" 
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="gameGenre" class="form-group__label">Жанр</label>
+              <select id="gameGenre" name="game_genre" class="form-group__input form-group__select" required>
+                <option value="" disabled selected>Выберите жанр игры</option>
+                <option value="rpg">Ролевые игры (RPG)</option>
+                <option value="shooter">Шутер</option>
+                <option value="action">Экшен (Action)</option>
+                <option value="strategy">Стратегия</option>
+                <option value="racing">Гонки</option>
+                <option value="adventure">Приключения</option>
+              </select>
+            </div>
+          </div>
+          <!-- 2. Продолжение формы: Разработчик, Стоимость, Изображение, Описание и Кнопка -->
+          <div class="admin-form__row">
+            <!-- 6.4 Компания-разработчик -->
+            <div class="form-group">
+              <label for="gameDeveloper" class="form-group__label">Компания-разработчик</label>
+              <input 
+                type="text" 
+                id="gameDeveloper" 
+                name="game_developer" 
+                class="form-group__input" 
+                placeholder="Например: CD Projekt RED" 
+                required
+              >
+            </div>
+
+            <!-- 6.6 Стоимость -->
+            <div class="form-group">
+              <label for="gamePrice" class="form-group__label">Стоимость (₽)</label>
+              <input 
+                type="number" 
+                id="gamePrice" 
+                name="game_price" 
+                class="form-group__input" 
+                placeholder="1990" 
+                min="0" 
+                step="1" 
+                required
+              >
+            </div>
+          </div>
+
+          <!-- 6.3 Изображение -->
+          <div class="form-group">
+            <label for="gameImage" class="form-group__label">Изображение (обложка игры)</label>
+            <input 
+              type="file" 
+              id="gameImage" 
+              name="game_image" 
+              class="form-group__input form-group__file" 
+              accept="image/*" 
+              required
+            >
+          </div>
+
+          <!-- 6.5 Описание -->
+          <div class="form-group">
+            <label for="gameDescription" class="form-group__label">Описание</label>
+            <textarea 
+              id="gameDescription" 
+              name="game_description" 
+              class="form-group__input form-group__textarea" 
+              rows="5" 
+              placeholder="Введите подробное описание сюжета, особенностей геймплея и системных требований..." 
+              required
+            ></textarea>
+          </div>
+
+          <!-- 6.7 Кнопка «Добавить» -->
+          <div class="admin-form__actions">
+            <button type="submit" class="btn btn--primary admin-form__submit">Добавить</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Подвал сайта -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__col">
+        <a href="index.html" class="logo footer__logo">
+          <span class="logo__text">Best<span class="logo__accent">Games</span></span>
+        </a>
+        <p class="footer__contact">
+          Телефон: <a href="tel:88009995599" class="footer__link">8-800-999-55-99</a>
+        </p>
+        <p class="footer__contact">
+          E-mail: <a href="mailto:best@games.ru" class="footer__link">best@games.ru</a>
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__title">Информация</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">Клиентам</a></li>
+          <li><a href="#" class="footer__link">Партнерам</a></li>
+          <li><a href="#" class="footer__link">О нас</a></li>
+          <li><a href="#" class="footer__link">Контакты</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__title">Навигация по сайту</h3>
+        <ul class="footer__list">
+          <li><a href="index.html" class="footer__link">Главная</a></li>
+          <li><a href="register.html" class="footer__link">Регистрация</a></li>
+          <li><a href="login.html" class="footer__link">Авторизация</a></li>
+          <li><a href="profile.html" class="footer__link">Личный кабинет</a></li>
+          <li><a href="index.html#genre-search" class="footer__link">Поиск</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
